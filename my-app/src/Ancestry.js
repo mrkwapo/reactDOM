@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 
 class Ancestry extends Component {
   render() {
+    // console.log(this.props);
+    const { name, age, birthday } = this.props;
     return (
       <div className='ancestor'>
-        <div>Name: Buddy</div>
-        <div>Age: 30</div>
-        <div>Birth Year: 1984</div>
+        <div>Name: {name}</div>
+        <div>Age: {age}</div>
+        <div>Birthday: {birthday}</div>
       </div>
     );
   }
