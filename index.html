@@ -26,31 +26,24 @@
           age: 34,
           gender: 'male'
         };
-        handleClick = e => {
-          // console.log(e.target);
+        handleChange = e => {
           this.setState({
-            name: 'Buddy',
-            age: 30
+            name: e.target.value
           });
-          console.log(this.state);
         };
-        handleMouseOver = e => {
-          console.log(e.target, e.pageX);
+        handleSubmit = e => {
+          e.preventDefault();
+          console.log('form submitted', this.state.name);
         };
-        handleCopy = e => {
-          console.log('Try being original for once!');
-        };
+
         render() {
           return (
             <div className='app-content'>
-              <h1>Hey, Geeks!</h1>
-              <p>
-                My name is: {this.state.name}, my age is: {this.state.age} and I
-                am a {this.state.gender}.
-              </p>
-              <button onClick={this.handleClick}> Click Me </button>
-              <button onMouseOver={this.handleMouseOver}> Hover Me </button>
-              <p onCopy={this.handleCopy}>What we think, we become</p>
+              <h1>Hey, my name is {this.state.name}</h1>
+              <form onSubmit={this.handleSubmit}>
+                <input type='text' onChange={this.handleChange} />
+                <button>Submit</button>
+              </form>
             </div>
           );
         }
