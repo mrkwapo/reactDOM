@@ -1,8 +1,8 @@
 // import React from 'react'; //you would use this with line 3 but since we are using line 4 we use the code on line 2
 import React, { Component } from 'react';
 import Ancestry from './Ancestry';
+import AddAncestor from './AddAncestor';
 
-// function App() { //this is the same as line 4 and 5
 class App extends Component {
   state = {
     ancestors: [
@@ -17,6 +17,7 @@ class App extends Component {
         <h1> My first React App!</h1>
         <p>Welcome ;)</p>
         <Ancestry ancestors={this.state.ancestors} />
+        <AddAncestor />
       </div>
     );
   }
