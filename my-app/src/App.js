@@ -18,12 +18,23 @@ class App extends Component {
       ancestors: ancestors
     });
   };
+  deleteAncestor = id => {
+    let ancestors = this.state.ancestors.filter(ancestor => {
+      return ancestor.id !== id;
+    });
+    this.setState({
+      ancestors: ancestors
+    });
+  };
   render() {
     return (
       <div className='App'>
         <h1> My first React App!</h1>
         <p>Welcome ;)</p>
-        <Ancestry ancestors={this.state.ancestors} />
+        <Ancestry
+          deleteAncestor={this.deleteAncestor}
+          ancestors={this.state.ancestors}
+        />
         <AddAncestor addAncestor={this.addAncestor} />
       </div>
     );
