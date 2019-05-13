@@ -11,13 +11,20 @@ class App extends Component {
       { name: 'Kona', age: 28, birthday: 'March 1, 1988', id: 3 }
     ]
   };
+  addAncestor = ancestor => {
+    ancestor.id = Math.random();
+    let ancestors = [...this.state.ancestors, ancestor];
+    this.setState({
+      ancestors: ancestors
+    });
+  };
   render() {
     return (
       <div className='App'>
         <h1> My first React App!</h1>
         <p>Welcome ;)</p>
         <Ancestry ancestors={this.state.ancestors} />
-        <AddAncestor />
+        <AddAncestor addAncestor={this.addAncestor} />
       </div>
     );
   }
