@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Ancestry extends Component {
-  render() {
-    // console.log(this.props);
-    const { name, age, birthday } = this.props;
+const Ancestry = ({ ancestors }) => {
+  const ancestorList = ancestors.map(ancestor => {
     return (
-      <div className='ancestor'>
-        <div>Name: {name}</div>
-        <div>Age: {age}</div>
-        <div>Birthday: {birthday}</div>
+      <div className='ancestor' key={ancestor.id}>
+        <div>Name: {ancestor.name}</div>
+        <div>Age: {ancestor.age}</div>
+        <div>Birthday: {ancestor.birthday}</div>
       </div>
     );
-  }
-}
+  });
+  return <div className='ancestor-list'>{ancestorList}</div>;
+};
 
 export default Ancestry;

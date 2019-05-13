@@ -4,13 +4,19 @@ import Ancestry from './Ancestry';
 
 // function App() { //this is the same as line 4 and 5
 class App extends Component {
+  state = {
+    ancestors: [
+      { name: 'Nate', age: 31, birthday: 'December 2, 1988', id: 1 },
+      { name: 'Remi', age: 33, birthday: 'February 3, 1988', id: 2 },
+      { name: 'Kona', age: 28, birthday: 'March 1, 1988', id: 3 }
+    ]
+  };
   render() {
     return (
       <div className='App'>
         <h1> My first React App!</h1>
         <p>Welcome ;)</p>
-        <Ancestry name='Nate' age='31' birthday='January 12, 1988' />
-        <Ancestry name='Remi' age='33' birthday='February 24, 1986' />
+        <Ancestry ancestors={this.state.ancestors} />
       </div>
     );
   }
